@@ -1,0 +1,39 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+
+# Environments & Environment Variables
+.env*
+.venv
+env/
+venv/
+venv_py311/
+# ENV/ # Less common, removed unless specifically used
+
+# IDE / Editor specific settings
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Project specific generated files/directories
+lab2/images/
+lab3/models
+lab3/dataset
+# Trained models / Datasets (common extensions)
+*.h5
+*.pb
+*.pt
+*.onnx
+*.pkl
+*.model
+*.pth
+*.joblib
+# *.data # Too generic, removed
+# *.csv # Keep if datasets are large and shouldn't be tracked, otherwise remove
+# *.json # Often used for configs, removed. Ignore specific large json datasets manually.
+*.npy
+*.npz
+*.

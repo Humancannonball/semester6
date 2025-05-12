@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentiSight.ai Object Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .upload-form {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .message {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .result {
+            text-align: center;
+        }
+        .result img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            max-height: 300px;
+            font-size: 14px;
+        }
+        .prediction-data {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>SentiSight.ai Object Detection</h1>
+    
+    <div class="upload-form">
+        <h2>Upload Image</h2>
+        {% if message %}
+        <div class="message error">{{ message }}</div>
+        {% endif %}
+        <form method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="file">Select an image:</label>
+                <input type="file" id="file" name="file" accept=".jpg,.jpeg,.png">
+            </div>
+            <br>
+            <div>
+                <button type="submit">Upload and Analyze</button>
+            </div>
+        </form>
+    </div>
+    
+    {% if filename %}
+    <div class="result">
+        <h2>Detection Result</h2>
+        <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Annotated image">
+        
+        {% if prediction %}
+        <div class="prediction-data">
+            <h3>Raw Prediction Data:</h3>
+            <pre>{{ prediction }}</pre>
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+</body>
+</html>
