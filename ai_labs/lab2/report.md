@@ -11,7 +11,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 2. Install required packages:
 ```bash
-pip install flask pillow requests python-dotenv
+pip install flask pillow requests python-dotenv numpy
 ```
 
 3. Verify the `.env` file exists in the project root with your SentiSight.ai credentials:
