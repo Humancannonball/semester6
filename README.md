@@ -6,6 +6,7 @@ This repository contains projects and lab work completed during Semester 6.
 
 - [AI Labs](#ai-labs)
 - [Microcontroller Projects](#microcontroller-projects)
+- [Linux Tasks](#linux-tasks)
 
 ## AI Labs
 
@@ -33,10 +34,64 @@ This section includes work related to Artificial Intelligence and Machine Learni
 
 ## Microcontroller Projects
 
-This section includes hardware projects developed using microcontrollers like ESP8266.
+This section includes hardware projects and laboratory work developed using microcontrollers.
+
+### ESP8266 Hardware Projects
 
 -   **Sound Level Logger (ESP8266)**
     -   Project Details: [./microcontrollers/hw/SoundLevelLogger/README.md](./microcontrollers/hw/SoundLevelLogger/README.md)
+    -   Features sound intensity recording to EEPROM with OLED display and menu interface
 
 -   **Smart Clock (ESP8266)**
     -   Project Details: [./microcontrollers/hw/SmartClock/README.md](./microcontrollers/hw/SmartClock/README.md)
+    -   NTP time synchronization with alarm functionality
+
+-   **OneWare Development Guide**
+    -   Documentation: [./microcontrollers/hw/Oneware/oneware.md](./microcontrollers/hw/Oneware/oneware.md)
+    -   Installation and usage guide for the OneWare electronics development IDE
+
+### Laboratory Work (Arduino)
+
+-   **Lab 1: Fundamentals of oscillograph use**
+    -   Signal measurement and oscilloscope tuning: [./microcontrollers/labs/lab1.md](./microcontrollers/labs/lab1.md)
+
+-   **Lab 2: General Purpose I/O Terminal Management**
+    -   LED control and display management: [./microcontrollers/labs/lab2.md](./microcontrollers/labs/lab2.md)
+
+-   **Lab 3: Use of GPIO in various situations**
+    -   RGB LEDs, tilt sensors, and matrix keyboards: [./microcontrollers/labs/lab3.md](./microcontrollers/labs/lab3.md)
+
+-   **Lab 4: Keyboard and 7-segment indicator**
+    -   Input/output integration: [./microcontrollers/labs/lab4.md](./microcontrollers/labs/lab4.md)
+
+-   **Lab 5: Ultrasonic Distance Sensors**
+    -   Distance measurement with HC-SR04: [./microcontrollers/labs/lab5.md](./microcontrollers/labs/lab5.md)
+
+-   **Lab 6: Digitalization of analog signals**
+    -   ADC for temperature and light sensors: [./microcontrollers/labs/lab6.md](./microcontrollers/labs/lab6.md)
+
+-   **Lab 7: Study of radio module NRF24L01**
+    -   Wireless communication: [./microcontrollers/labs/lab7.md](./microcontrollers/labs/lab7.md)
+
+-   **Lab 8: Ethernet Internet Module**
+    -   IoT networking and web interfaces: [./microcontrollers/labs/lab8.md](./microcontrollers/labs/lab8.md)
+
+-   **Lab 9: Examining WD Timer and Sleep Modes**
+    -   Power management: [./microcontrollers/labs/lab9.md](./microcontrollers/labs/lab9.md)
+
+-   **Lab 10: Controller chip SSD1306**
+    -   OLED display graphics and text: [./microcontrollers/labs/lab10.md](./microcontrollers/labs/lab10.md)
+
+-   **Lab 11: WS2812B Digital LED**
+    -   Addressable RGB LEDs: [./microcontrollers/labs/lab11.md](./microcontrollers/labs/lab11.md)
+
+-   **Tinkercad Instructions**
+    -   Guide for creating lab schematics: [./microcontrollers/labs/tinkercad_instructions.md](./microcontrollers/labs/tinkercad_instructions.md)
+
+## Linux Tasks
+
+This section includes Linux-related projects and configurations.
+
+-   **Network Configuration Tool**
+    -   Documentation: [./linux_tasks/Readme.md](./linux_tasks/Readme.md)
+    -   Parses configuration files to set up network interfaces and routing tables
