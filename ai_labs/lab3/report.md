@@ -94,5 +94,5 @@ The experiment demonstrated the effectiveness of transfer learning for image cla
 ## 7. Environment
 
 *   Python: 3.11
-*   Libraries: TensorFlow 2.x, Keras (via TensorFlow), NumPy, Scikit-learn, Matplotlib, Seaborn, Requests, SciPy
+*   Libraries: TensorFlow 2.x (including Keras), NumPy, Scikit-learn, Matplotlib, Seaborn, Requests, SciPy
 *   Hardware: Training was performed utilizing an NVIDIA GeForce RTX 4060 Ti GPU with CUDA and cuDNN, accelerated by XLA compilation where applicable.

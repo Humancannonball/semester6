@@ -1,166 +1,112 @@
 # CNN Development and Training
 
-This repository contains the implementation of Lab Work 3 focused on developing and training Convolutional Neural Networks (CNNs) for image classification. The lab includes building a custom CNN from scratch and applying transfer learning with a pre-trained model to classify flower species from the Oxford 102 Flowers dataset.
+This repository contains the implementation of Lab Work 3, focusing on developing and training Convolutional Neural Networks (CNNs) for image classification. The project uses a modular structure to build, train, and evaluate a custom CNN and a transfer learning model (MobileNetV2) on a subset of the Oxford 102 Flowers dataset.
 
 ## Project Structure
 
-The code is organized in a modular structure to allow for training on a powerful machine and inference on a less powerful one:
+The code is organized into several Python modules for clarity and reusability:
 
-- `config.py` - Contains shared configuration parameters
-- `data_utils.py` - Functions for downloading, preparing, and augmenting data
-- `model_utils.py` - Model architecture definitions
-- `training_utils.py` - Model training functions
-- `evaluation_utils.py` - Model evaluation and visualization functions
-- `prepare_data.py` - Standalone script for just preparing the dataset
-- `train_models.py` - Script for training and evaluating models
-- `inference.py` - Script for performing inference on new images
-- `models/` - Directory where trained models are saved
-- `dataset/` - Directory where the dataset is downloaded and organized
-- `results/` - Directory for saving visualizations and results
+- `config.py`: Contains shared configuration parameters like image dimensions, batch size, dataset URLs, number of classes, and directory paths. Initializes random seeds for reproducibility.
+- `data_utils.py`: Includes functions for downloading the Oxford 102 Flowers dataset, extracting images and labels, selecting top N classes, splitting data into training/validation/test sets, and creating augmented data generators.
+- `model_utils.py`: Defines the architectures for both the custom CNN model and the transfer learning model (using MobileNetV2 as a base).
+- `training_utils.py`: Provides functions for compiling and training the models, including setting up callbacks like `ModelCheckpoint` and `EarlyStopping`, and plotting training history (accuracy and loss curves).
+- `evaluation_utils.py`: Contains functions for evaluating the trained models on the test set, generating and plotting confusion matrices, calculating classification reports (precision, recall, F1-score), and visualizing sample predictions.
+- `prepare_data.py`: A standalone script that utilizes `data_utils.py` to download, process, and split the dataset. This can be run once to set up the data.
+- `train_models.py`: The main script to train both the custom CNN and the transfer learning model. It uses functions from `model_utils.py`, `training_utils.py`, and `evaluation_utils.py`.
+- `inference.py`: A script to load a trained model and perform inference on new, unseen images. It demonstrates how to use the saved models.
+- `models/`: Directory where trained Keras models (`.keras` files) are saved.
+- `dataset/`: Directory where the Oxford 102 Flowers dataset is downloaded, extracted, and organized into `train`, `validation`, and `test` subdirectories. It also stores `class_indices.json`.
+- `results/`: Directory for saving output visualizations like training history plots, confusion matrices, and sample prediction images.
+- `task.md`: Detailed description of the lab work requirements.
+- `report.md`: The detailed report summarizing the methodology, results, and conclusions of the lab.
 
 ## File Descriptions
-
-- **config.py**: Central configuration file that sets global parameters like image size, batch size, number of classes, dataset URLs, and directory paths. Also initializes random seeds for reproducibility.
-
-- **data_utils.py**: Contains all data handling functions including downloading, extracting, preparing, and augmenting the Oxford 102 Flowers dataset. Functions create data generators with appropriate augmentation for training.
-
-- **model_utils.py**: Defines the architectures for both the custom CNN and transfer learning models. The custom CNN has multiple convolutional blocks with different padding strategies, while the transfer learning model uses MobileNetV2 as a base.
-
-- **training_utils.py**: Contains functions for training models, implementing callbacks for early stopping and model checkpointing, and plotting training history.
-
-- **evaluation_utils.py**: Provides functions for evaluating trained models, including confusion matrix generation, sample prediction visualization, and model comparison.
-
-- **prepare_data.py**: Standalone script that just handles data preparation without model training, useful when you want to prepare data once and reuse it.
-
-- **train_models.py**: Main training script that uses functions from other modules to create and train both custom CNN and transfer learning models.
-
-- **inference.py**: Script for running inference on new images using trained models, designed to work on less powerful machines.
-
-- **lab3.py**: Original monolithic script that contains all functionality in one file (for reference).
+The roles of `config.py`, `data_utils.py`, `model_utils.py`, `training_utils.py`, `evaluation_utils.py`, `prepare_data.py`, `train_models.py`, and `inference.py` are detailed in the "Project Structure" section.
 
 ## Detailed Running Instructions
 
 ### Setup Environment
 
-1. Clone this repository and navigate to the project directory:
-   ```bash
-   git clone https://github.com/yourusername/cnn-development.git
-   cd cnn-development
-   ```
+1.  **Clone this repository:**
+    ```bash
+    git clone https://github.com/your-username/your-repo-name.git # Replace with your actual repo URL
+    cd your-repo-name # Or your project directory name
+    ```
 
-2. Create and activate a virtual environment:
-   ```bash
-   python3.11 -m venv venv_py311
-   source venv_py311/bin/activate
-   ```
+2.  **Create and activate a Python 3.11 virtual environment:**
+    ```bash
+    python3.11 -m venv venv_py311
+    source venv_py311/bin/activate
+    ```
 
-3. Install required packages:
-   ```bash
-   pip install --upgrade pip
-   pip install tensorflow numpy matplotlib scikit-learn scipy seaborn requests
-   ```
+3.  **Install required packages:**
+    ```bash
+    pip install --upgrade pip
+    pip install tensorflow numpy matplotlib scikit-learn scipy seaborn requests
+    ```
 
-### Option 1: Running the Original Full Script
-
-If you prefer to run everything in one go (not recommended for machines with limited resources):
-```bash
-python lab3.py
-```
-
-### Option 2: Running the Modular Pipeline (Recommended)
+### Modular Pipeline (Recommended)
 
 #### Step 1: Configure Parameters (Optional)
-Review and modify parameters in `config.py` if needed:
-```bash
-# View the configuration
-cat config.py
-
-# Edit if necessary
-vim config.py  
-```
+Review and modify parameters in `config.py` if needed (e.g., `NUM_CLASSES`, `IMAGE_SIZE`, `BATCH_SIZE`).
 
 #### Step 2: Prepare Data
-This step downloads and prepares the dataset. Run once to set up your data:
+This script downloads the dataset, selects the top N classes, splits the data, and organizes it into `train`, `validation`, and `test` directories. Run this once.
 ```bash
 python prepare_data.py
 ```
-This creates the necessary directory structure, downloads the dataset, and prepares data generators.
 
 #### Step 3: Train Models
-This is the most computationally intensive step. Ideally run on a machine with a good GPU:
+This script trains both the custom CNN and the transfer learning model. It saves the best models and generates evaluation plots. This is computationally intensive and benefits from a GPU.
 ```bash
 python train_models.py
 ```
-The script will:
-- Train a custom CNN model from scratch
-- Train a transfer learning model using MobileNetV2
-- Generate performance visualizations for both models
-- Save the best models to the `models/` directory
+You can monitor GPU usage with `nvidia-smi -l 1`.
 
-You can monitor GPU usage while training with:
-```bash
-nvidia-smi -l 1  # Updates every 1 second
-```
-
-#### Step 4: Run Inference
-Once models are trained, you can run inference on new images even on a less powerful machine:
+#### Step 4: Run Inference (Optional)
+After training, use this script to make predictions on new images.
 ```bash
 # For the custom CNN model:
-python inference.py --model custom --image path/to/flower_image.jpg
+python inference.py --model_type custom --model_path models/best_custom_model.keras --image_path path/to/your/flower_image.jpg
 
-# For the transfer learning model (usually better performance):
-python inference.py --model transfer --image path/to/flower_image.jpg
+# For the transfer learning model:
+python inference.py --model_type transfer --model_path models/best_transfer_model_phase2.keras --image_path path/to/your/flower_image.jpg
 ```
 
 ### Workflow for Different Machines
+(This section remains largely the same as in the original, ensure paths in `scp` commands are correct if used)
 
 #### On a Powerful Machine (for training):
-1. Prepare the data:
-   ```bash
-   python prepare_data.py
-   ```
-2. Train the models:
-   ```bash
-   python train_models.py
-   ```
-3. Copy the trained models and class indices to your less powerful machine:
-   ```bash
-   # Example: Copy using scp or other file transfer method
-   scp -r models/ user@weak-pc:/path/to/lab3/
-   scp dataset/class_indices.json user@weak-pc:/path/to/lab3/dataset/
-   ```
+1.  Prepare the data: `python prepare_data.py`
+2.  Train the models: `python train_models.py`
+3.  Copy the `models/` directory and `dataset/class_indices.json` to your inference machine.
 
 #### On a Less Powerful Machine (for inference):
-1. Make sure you have the pre-trained models and class indices file
-2. Run inference on new images:
-   ```bash
-   python inference.py --model transfer --image path/to/your/flower_image.jpg
-   ```
+1.  Ensure you have the trained models and `class_indices.json`.
+2.  Run inference: `python inference.py --model_type transfer --model_path models/best_transfer_model_phase2.keras --image_path path/to/your/flower_image.jpg`
+
 
 ### Expected Output
 
-After running the training script, you'll find several output files in the `results/` directory:
+After running `prepare_data.py` and `train_models.py`, you will find:
 
-- **Dataset Visualization**:
-  - `augmented_images.png`: Shows sample images after augmentation
-
-- **Training Metrics**:
-  - `Custom CNN_history.png`: Accuracy and loss curves for custom CNN
-  - `Transfer Learning_history.png`: Accuracy and loss curves for transfer learning
-
-- **Evaluation Results**:
-  - `Custom CNN_confusion_matrix.png`: Confusion matrix for custom CNN
-  - `Transfer Learning_confusion_matrix.png`: Confusion matrix for transfer learning
-  - `Custom CNN_predictions.png`: Sample predictions from custom CNN
-  - `Transfer Learning_predictions.png`: Sample predictions from transfer learning
-  - `model_comparison.png`: Comparative bar chart of model performances
-
+- **Dataset**: Organized in `dataset/` with `train`, `validation`, `test` folders, and `class_indices.json`.
 - **Trained Models** (in `models/` directory):
-  - `best_custom_model.keras`: Best custom CNN model
-  - `best_transfer_model_phase1.keras`: Best transfer model after first training phase
-  - `best_transfer_model_phase2.keras`: Best transfer model after fine-tuning
-  - `final_custom_model.keras`: Custom CNN after full training
-  - `final_transfer_model.keras`: Transfer model after full training
+    - `best_custom_model.keras`
+    - `final_custom_model.keras`
+    - `best_transfer_model_phase1.keras`
+    - `best_transfer_model_phase2.keras` (best fine-tuned model)
+    - `final_transfer_model_phase2.keras`
+- **Results & Visualizations** (in `results/` directory):
+    - `dataset_sample_images.png` (if generated by `prepare_data.py`)
+    - `augmented_images.png` (visualization of augmented training images)
+    - `Custom CNN_training_history.png` (accuracy and loss curves)
+    - `Transfer Learning_training_history.png` (accuracy and loss curves for both phases)
+    - `Custom CNN_confusion_matrix.png`
+    - `Transfer Learning_confusion_matrix.png`
+    - `Custom CNN_sample_predictions.png`
+    - `Transfer Learning_sample_predictions.png`
+    - `model_performance_comparison.png` (bar chart comparing model metrics)
 
 ## Features
 
@@ -268,18 +214,3 @@ If you have an NVIDIA GPU (like the RTX 4060 Ti) but TensorFlow isn't detecting 
     python -c "import tensorflow as tf; print('TensorFlow Version:', tf.__version__); print('Num GPUs Available: ', len(tf.config.list_physical_devices('GPU')))"
     ```
     If successful, you should see `Num GPUs Available: 1` (or more).
-
-## Results
-
-After running the training script, you'll get several output files in the `results/` directory:
-- `augmented_images.png`: Visualization of augmented 
-2025-04-29 11:10:17.819973: I tensorflow/core/platform/cpu_feature_guard.cc:210] This Tenstraining images
-- `Custom CNN_history.png`: Training and validation accuracy/loss curves for the custom model
-- `Transfer Learning_history.png`: Training and validation accuracy/loss curves for the transfer learning model
-- `Custom CNN_confusion_matrix.png`: Confusion matrix for the custom model
-- `Transfer Learning_confusion_matrix.png`: Confusion matrix for the transfer learning model
-- `Custom CNN_predictions.png`: Sample predictions from the custom model
-- `Transfer Learning_predictions.png`: Sample predictions from the transfer learning model
-- `model_comparison.png`: Comparison of both models' performance metrics
-
-The best models will be saved in the `models/` directory.

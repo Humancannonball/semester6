@@ -22,18 +22,18 @@ Oxford 102 Flowers dataset containing images of 102 flower categories.
 ### Part 1: Custom CNN (6 points)
 
 1. **Setup Environment**
-   - Configure Google Colab with TensorFlow and Keras
+   - Configure a Python environment with TensorFlow and Keras (e.g., local virtual environment, Google Colab).
 
 2. **Data Preparation (1.5 points)**
    - Load the Oxford 102 Flowers dataset
    - Select 5-10 classes with the highest number of images
    - Split data into training and testing sets
    - Normalize images
-   - Implement image augmentation:
-     - Rotation, shift, zoom
-     - Horizontal and vertical flipping
+   - Implement image augmentation (e.g., using `ImageDataGenerator` or libraries like Albumentations):
+     - Rotation, width/height shift, zoom
+     - Horizontal and/or vertical flipping
      - Brightness adjustment
-     - Random crop, color jitter
+     - (Optional: Other techniques like shear, random crop, color jitter if implemented)
 
 3. **CNN Model Creation (2 points)**
    - Design a custom CNN architecture with:

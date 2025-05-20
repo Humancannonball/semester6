@@ -15,6 +15,10 @@ pip install flask pillow requests python-dotenv numpy
 ```
 
 3. Verify the `.env` file exists in the project root with your SentiSight.ai credentials:
+   ```dotenv
+   SENTISIGHT_API_TOKEN=your_api_token_here
+   SENTISIGHT_PROJECT_ID=your_project_id_here
+   ```
 
 ## Project Overview
 This project utilizes the SentiSight.ai API for object detection in images. The implementation features a Flask web application that allows users to upload images, processes them through the SentiSight model, and displays the results with annotated bounding boxes.
@@ -28,7 +32,8 @@ This project utilizes the SentiSight.ai API for object detection in images. The 
 - Total training time: 2h 12m 35s
 - Best model saved at: 1h 47m 22s
 
-![Training Progress Graph](/path/to/training-graph.png)
+(Illustrative graph of training progress would be shown here if available)
+<!-- ![Training Progress Graph](/path/to/training-graph.png) -->
 
 ### Dataset Statistics
 | Label | Images | Objects |
@@ -45,7 +50,8 @@ This project utilizes the SentiSight.ai API for object detection in images. The 
 - Car: 88.45%
 - Dog: 85.19%
 
-![Score Thresholds Graph](/path/to/thresholds-graph.png)
+(Illustrative graph of score thresholds would be shown here if available)
+<!-- ![Score Thresholds Graph](/path/to/thresholds-graph.png) -->
 
 ### Performance Metrics
 
@@ -74,7 +80,8 @@ The application is built with Flask and provides a simple web interface for user
 4. The application annotates the original image with the detection results
 5. The annotated image is displayed to the user
 
-![Application Interface](/path/to/app-interface.png)
+(Illustrative image of the application interface would be shown here if available)
+<!-- ![Application Interface](/path/to/app-interface.png) -->
 
 ### API Integration
 The application communicates with the SentiSight.ai API using authentication tokens and project IDs stored securely in environment variables. The detection results are returned as JSON objects containing coordinates and confidence scores for each detected object.
@@ -82,7 +89,8 @@ The application communicates with the SentiSight.ai API using authentication tok
 ### Image Annotation
 Detection results are visualized by drawing bounding boxes around detected objects and labeling them with their class and confidence score.
 
-![Sample Detection](/path/to/sample-detection.png)
+(Illustrative image of a sample detection would be shown here if available)
+<!-- ![Sample Detection](/path/to/sample-detection.png) -->
 
 ## Future Improvements
 - Add support for video processing
