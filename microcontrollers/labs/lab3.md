@@ -223,3 +223,9 @@ Rows {30-33}, Columns {34-37}
 Arduino EL lab 2021
 ```
 *1 fig. Connection diagram of tilt sensor and keyboard*
+
+## Photos
+
+![Numpad Image](photos/numpad.jpg)
+![Numpad Image 2](photos/numpad2.jpg)
+![Display Image](photos/display.jpg)

@@ -39,3 +39,12 @@ for illustration.
     represents a logic unit, 0 V signal means logic 0. Decode (write {1,0}) the 8-bit message displayed on the
     screen. – `10100010`
 8.  Prepare the report, upload it in pdf format to moodle.
+
+## Photos
+
+![Oscilloscope Image 1](photos/osc1.jpg)
+![Oscilloscope Image 2](photos/osc2.jpg)
+![Oscilloscope Image 3](photos/osc3.jpg)
+![Oscilloscope Image 4](photos/osc4.jpg)
+
+

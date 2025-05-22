@@ -48,64 +48,6 @@ This project implements a sound level logger using an ESP8266 microcontroller, a
 -   Double-check all connections before powering on the ESP8266. Incorrect wiring can damage components.
 -   The KY-037 module has a potentiometer to adjust the sensitivity of the digital output (DO). This does not affect the analog output (AO) used in this project.
 
-## Software Setup
-
-### 1. Install Arduino IDE
-If you haven't already, download and install the Arduino IDE from [arduino.cc](https://www.arduino.cc/en/software).
-
-### 2. Install ESP8266 Board Support
--   In Arduino IDE, go to File > Preferences.
--   Enter `http://arduino.esp8266.com/stable/package_esp8266com_index.json` into the "Additional Board Manager URLs" field. Click OK.
--   Go to Tools > Board > Boards Manager. Search for "esp8266" and install the "esp8266 by ESP8266 Community" package.
-
-### 3. Install Required Libraries
-Go to Tools > Manage Libraries. Search for and install the following libraries:
--   `Adafruit SSD1306` (by Adafruit)
--   `Adafruit GFX Library` (by Adafruit - often installed as a dependency for SSD1306)
-The `Wire` (for I2C) and `EEPROM` libraries are built-in and do not require separate installation.
-
-### 4. Load the Sketch
--   Open the `SoundLevelLogger.ino` file in the Arduino IDE.
--   Select your ESP8266 board type (e.g., "NodeMCU 1.0 (ESP-12E Module)") from Tools > Board.
--   Select the correct COM port from Tools > Port.
--   Click the "Upload" button to compile and upload the sketch to your ESP8266.
-
-## Operating Instructions
-
-The device is controlled using the built-in Flash button (GPIO0).
-
-### Initial State (Display Live Mode)
--   Upon startup, the logger is in `DISPLAY_LIVE` mode.
--   The OLED display shows:
-    -   Current sound level (raw ADC value, 0-1023).
-    -   Number of entries currently stored in EEPROM.
-    -   EEPROM status (e.g., "Ready", "Logging", "Full").
-    -   Instruction: "Short: Menu".
-
-### Button Controls & Modes
--   **Short Press (SP):** Typically less than 1 second.
--   **Long Press (LP):** Typically 1.5 seconds or more.
-
-1.  **From `DISPLAY_LIVE` or `LOGGING_ACTIVE` Mode:**
-    *   **SP:** Enters `MENU_SELECT` mode.
-
-2.  **In `MENU_SELECT` Mode:**
-    *   The display shows available actions: "Start Log" (or "Stop Log" if active/full), "Dump Data", "Erase Data".
-    *   **SP:** Cycles through the menu options.
-    *   **LP:** Executes the selected menu option:
-        *   **"Start Log":** Enters `LOGGING_ACTIVE` mode. Sound data is recorded at set intervals.
-        *   **"Stop Log":** Stops logging and returns to `DISPLAY_LIVE` mode.
-        *   **"Dump Data":** Enters `DATA_DUMPING` mode. All data is printed to the Serial Monitor. Returns to `DISPLAY_LIVE` mode.
-        *   **"Erase Data":** Enters `ERASE_CONFIRM` mode.
-
-3.  **In `ERASE_CONFIRM` Mode:**
-    *   Display shows "Erase? LP:Yes SP:No".
-    *   **SP:** Cancels erase operation and returns to `MENU_SELECT` or `DISPLAY_LIVE` mode.
-    *   **LP:** Confirms erase. All data in EEPROM is cleared. Returns to `DISPLAY_LIVE` mode.
-
-### EEPROM Status
--   **EEPROM Full:** If the EEPROM becomes full during logging, logging will automatically stop, and the display will indicate "EEPROM Full". Data must be dumped and/or erased to log new entries.
-
 ## Retrieving Logged Data
 
 1.  Connect the ESP8266 to your computer via USB.
@@ -140,3 +82,6 @@ The device is controlled using the built-in Flash button (GPIO0).
     *   Ensure correct board and port are selected in Arduino IDE.
     *   Try holding the Flash/Boot button (GPIO0) while uploading if it fails.
     *   Check USB cable and drivers (CH340/CP210x if applicable).
+
+## Images
+![Sample Output](output.png)

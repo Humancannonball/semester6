@@ -219,3 +219,8 @@ void row4() {
   }
 }
 ```
+
+## Photos
+![Numpad Image](photos/numpad.jpg)
+![Numpad Image 2](photos/numpad2.jpg)
+![Display Image](photos/display.jpg)

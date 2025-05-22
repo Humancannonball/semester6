@@ -13,7 +13,7 @@ This repository contains a series of laboratory reports for microcontroller prog
 7. [Lab 7: Study of radio module NRF24L01](lab7.md)
 8. [Lab 8: Ethernet Internet Module](lab8.md)
 9. [Lab 9: Examining WD timer and sleep modes](lab9.md)
-10. [Lab 10: Controller chip SSD1306](lab10.md)
+10. [Lab 10: I2C bus and EEPROM 24C04](lab10.md)
 11. [Lab 11: WS2812B Digital LED](lab11.md)
 
 ## Lab Report Overview
@@ -45,8 +45,8 @@ Connect Arduino devices to the internet using Ethernet modules. Create web serve
 ### Lab 9: Examining WD timer and sleep modes
 Understand watchdog timers and power management with sleep modes. Learn how to create more power-efficient Arduino applications.
 
-### Lab 10: Controller chip SSD1306
-Learn to use the SSD1306 OLED display controller to show text and graphics. Explore different drawing functions and create simple animations with shapes and text.
+### Lab 10: I2C bus and EEPROM 24C04
+Learn to use I2C bus and write data to EEPROM 24C04.
 
 ### Lab 11: WS2812B Digital LED
 Work with addressable RGB LEDs and understand their communication protocol. Create color patterns, analyze the timing characteristics, and learn about power requirements for LED arrays.
@@ -54,6 +54,10 @@ Work with addressable RGB LEDs and understand their communication protocol. Crea
 ## Creating Project Schematics
 
 For instructions on creating schematics for these labs in Tinkercad, please see the [Tinkercad Instructions Guide](tinkercad_instructions.md).
+
+## Tinkercad Schematics
+
+Project schematics can be created using [Tinkercad](https://www.tinkercad.com/).
 
 ## Equipment Used
 
