@@ -5,7 +5,7 @@
 ### MQTT Protocol Labs
 
 - [Lab 1: JSON Usage](reports/lab1_report.md)
-- [Lab 2: JSON File Merging](reports/lab2_report.md)  
+- [Lab 2: JSON File Merging](mqtt_labs/reports/lab2_report.md)  
 - [Lab 3: MQTT Basic Implementation](mqtt_labs/reports/lab3/lab3_report.md)
 - [Lab 4: MQTT with Database Storage](mqtt_labs/reports/lab4/lab4_report.md)
 - [Lab 5: MQTT Data Visualization](mqtt_labs/reports/lab5/lab5_report.md)

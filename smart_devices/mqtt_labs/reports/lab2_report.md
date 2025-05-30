@@ -14,9 +14,9 @@ Merge two provided JSON files (`users1.json` and `users2.json`) into a single JS
 import json
 
 # Define file paths
-file1_path = '/var/home/mark/Documents/semester6/smart_devices/mqtt_labs/lab2/users1.json'
-file2_path = '/var/home/mark/Documents/semester6/smart_devices/mqtt_labs/lab2/users2.json'
-merged_file_path = '/var/home/mark/Documents/semester6/smart_devices/mqtt_labs/lab2/users_merged.json' # Changed name to avoid conflict if users.json is a directory or special
+file1_path = 'users1.json'
+file2_path = 'users2.json'
+merged_file_path = 'users.json'
 
 # Read users1.json
 try:
@@ -25,11 +25,10 @@ try:
     print(f"Successfully read {file1_path}")
 except FileNotFoundError:
     print(f"Error: {file1_path} not found.")
-    data1 = {"table": {"users": {}}} # Default to empty if file not found
+    data1 = {"table": {"users": {}}}
 except json.JSONDecodeError:
     print(f"Error: Could not decode JSON from {file1_path}.")
-    data1 = {"table": {"users": {}}} # Default to empty if JSON is invalid
-
+    data1 = {"table": {"users": {}}}
 
 # Read users2.json
 try:
@@ -38,25 +37,21 @@ try:
     print(f"Successfully read {file2_path}")
 except FileNotFoundError:
     print(f"Error: {file2_path} not found.")
-    data2 = {"table": {"users": {}}} # Default to empty if file not found
+    data2 = {"table": {"users": {}}}
 except json.JSONDecodeError:
     print(f"Error: Could not decode JSON from {file2_path}.")
-    data2 = {"table": {"users": {}}} # Default to empty if JSON is invalid
+    data2 = {"table": {"users": {}}}
 
 # Merge data
-# Initialize merged_data with the structure and content of data1
-# Ensuring 'table' and 'users' keys exist
 merged_data = {"table": {"users": {}}}
 
 if "table" in data1 and "users" in data1["table"]:
     merged_data["table"]["users"].update(data1["table"]["users"])
 
 if "table" in data2 and "users" in data2["table"]:
-    # Update will overwrite keys from data1 if they also exist in data2,
-    # or add new keys from data2.
     merged_data["table"]["users"].update(data2["table"]["users"])
 
-# Save the merged data to users_merged.json
+# Save the merged data to users.json
 try:
     with open(merged_file_path, 'w') as mf:
         json.dump(merged_data, mf, indent=4)
@@ -64,17 +59,82 @@ try:
 except IOError:
     print(f"Error: Could not write to {merged_file_path}.")
 
-# Print the merged data (optional)
+# Print the merged data
 print("\nMerged JSON data:")
 print(json.dumps(merged_data, indent=4))
+```
 
+## Input Files
+
+### users1.json
+```json
+{
+    "table": {
+        "users": {
+            "user1": {
+                "name": "tester1",
+                "codes": ["1", "2", "3", "4"],
+                "surname": "tester1"
+            },
+            "user2": {
+                "name": "tester2", 
+                "codes": ["1", "2", "3", "4"],
+                "surname": "tester2"
+            }
+        }
+    }
+}
+```
+
+### users2.json
+```json
+{
+    "table": {
+        "users": {
+            "user3": {
+                "name": "tester3",
+                "codes": ["1", "2", "3", "4"],
+                "surname": "tester3"
+            }
+        }
+    }
+}
+```
+
+## Expected Output
+
+### users.json (merged result)
+```json
+{
+    "table": {
+        "users": {
+            "user1": {
+                "name": "tester1",
+                "codes": ["1", "2", "3", "4"],
+                "surname": "tester1"
+            },
+            "user2": {
+                "name": "tester2",
+                "codes": ["1", "2", "3", "4"], 
+                "surname": "tester2"
+            },
+            "user3": {
+                "name": "tester3",
+                "codes": ["1", "2", "3", "4"],
+                "surname": "tester3"
+            }
+        }
+    }
+}
 ```
 
 ## Report
 
-The Python script above performs the following actions:
-1.  Reads data from `users1.json` and `users2.json`.
-2.  Handles potential `FileNotFoundError` and `json.JSONDecodeError` during file reading.
-3.  Merges the "users" dictionaries from both files under the "table" key. If user keys are duplicated, the values from `users2.json` will overwrite those from `users1.json` for the respective keys.
-4.  Saves the combined data into a new file named `users_merged.json` with pretty printing (indentation).
-5.  Prints a confirmation message and the merged data to the console.
+The Python script demonstrates:
+1. Reading JSON files with proper error handling for missing files and invalid JSON
+2. Merging user dictionaries from both files under the "table" structure
+3. Handling duplicate keys (values from the second file would overwrite the first)
+4. Saving the combined data with proper formatting
+5. Console output for verification
+
+The merge operation successfully combines all users from both input files into a single JSON structure, maintaining the original nested format while adding all unique users to the merged result.
