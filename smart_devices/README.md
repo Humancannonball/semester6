@@ -6,9 +6,9 @@
 
 - [Lab 1: JSON Usage](mqtt_labs/reports/lab1_report.md)
 - [Lab 2: JSON File Merging](mqtt_labs/reports/lab2_report.md)  
-- [Lab 3: MQTT Basic Implementation](mqtt_labs/reports/lab3/lab3_report.md)
-- [Lab 4: MQTT with Database Storage](mqtt_labs/reports/lab4/lab4_report.md)
-- [Lab 5: MQTT Data Visualization](mqtt_labs/reports/lab5/lab5_report.md)
+- [Lab 3: MQTT Basic Implementation](mqtt_labs/reports/lab3/)
+- [Lab 4: MQTT with Database Storage](mqtt_labs/reports/lab4/)
+- [Lab 5: MQTT Data Visualization](mqtt_labs/reports/lab5/)
 
 ### Web Development
 
@@ -30,13 +30,13 @@ smart_devices/
 │   ├── reports/               # All lab reports
 │   │   ├── lab1_report.md     # JSON Usage
 │   │   ├── lab2_report.md     # JSON File Merging
-│   │   ├── lab3/
-│   │   │   └── lab3_report.md # MQTT Basic Implementation
-│   │   ├── lab4/
-│   │   │   ├── lab4_report.md # MQTT with Database Storage
+│   │   ├── lab3/              # MQTT Basic Implementation
+│   │   │   └── lab3_report.md 
+│   │   ├── lab4/              # MQTT with Database Storage
+│   │   │   ├── lab4_report.md 
 │   │   │   └── mqtt_iot_db.py # Database implementation
-│   │   └── lab5/
-│   │       ├── lab5_report.md # MQTT Data Visualization
+│   │   └── lab5/              # MQTT Data Visualization
+│   │       ├── lab5_report.md 
 │   │       ├── templates/
 │   │       │   └── index.html
 │   │       └── mqtt_project/
