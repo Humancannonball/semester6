@@ -4,7 +4,7 @@
 
 ### MQTT Protocol Labs
 
-- [Lab 1: JSON Usage](reports/lab1_report.md)
+- [Lab 1: JSON Usage](mqtt_labs/reports/lab1_report.md)
 - [Lab 2: JSON File Merging](mqtt_labs/reports/lab2_report.md)  
 - [Lab 3: MQTT Basic Implementation](mqtt_labs/reports/lab3/lab3_report.md)
 - [Lab 4: MQTT with Database Storage](mqtt_labs/reports/lab4/lab4_report.md)
@@ -26,21 +26,21 @@
 
 ```
 smart_devices/
-├── reports/
-│   ├── lab1_report.md          # JSON Usage
-│   ├── lab2_report.md          # JSON File Merging
-│   └── ...other reports
 ├── mqtt_labs/
-│   ├── reports/               # Lab reports only
+│   ├── reports/               # All lab reports
+│   │   ├── lab1_report.md     # JSON Usage
+│   │   ├── lab2_report.md     # JSON File Merging
 │   │   ├── lab3/
-│   │   │   └── lab3_report.md
+│   │   │   └── lab3_report.md # MQTT Basic Implementation
 │   │   ├── lab4/
-│   │   │   └── lab4_report.md
+│   │   │   ├── lab4_report.md # MQTT with Database Storage
+│   │   │   └── mqtt_iot_db.py # Database implementation
 │   │   └── lab5/
-│   │       ├── lab5_report.md
+│   │       ├── lab5_report.md # MQTT Data Visualization
 │   │       ├── templates/
 │   │       │   └── index.html
 │   │       └── mqtt_project/
+│   │           ├── flask_mqtt_pavyzdys.py
 │   │           └── templates/
 │   │               └── index.html
 │   └── .gitignore            # Excludes working directories
