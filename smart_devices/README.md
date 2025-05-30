@@ -23,6 +23,9 @@
 
 - [API Integration & Data Visualization Assignment](coursework/)
 
+### Exam
+- [Exam work and report, based on lab4 and lab5](exam/)
+
 ## Project Structure
 
 ```
