@@ -4,9 +4,14 @@ This repository contains projects and lab work completed during Semester 6.
 
 ## Table of Contents
 
+- [Smart Devices](#smart-devices)
 - [AI Labs](#ai-labs)
 - [Microcontroller Projects](#microcontroller-projects)
 - [Linux Tasks](#linux-tasks)
+
+## Smart Devices
+
+- **Main Smart Devices Overview:** [./smart_devices/README.md](./smart_devices/README.md)
 
 ## AI Labs
 
