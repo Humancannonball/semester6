@@ -35,7 +35,6 @@ This section includes work related to Artificial Intelligence and Machine Learni
 
 -   **Lab 4: Regression Analysis for Housing Prices**
     -   README & Task Description: [./ai_labs/lab4/README.md](./ai_labs/lab4/README.md)
-    -   (Add a Report link here if/when available, e.g., `./ai_labs/lab4/report.md`)
 
 ## Microcontroller Projects
 
@@ -89,9 +88,6 @@ This section includes hardware projects and laboratory work developed using micr
 
 -   **Lab 11: WS2812B Digital LED**
     -   Addressable RGB LEDs: [./microcontrollers/labs/lab11.md](./microcontrollers/labs/lab11.md)
-
--   **Tinkercad Instructions**
-    -   Guide for creating lab schematics: [./microcontrollers/labs/tinkercad_instructions.md](./microcontrollers/labs/tinkercad_instructions.md)
 
 ## Linux Tasks
 
