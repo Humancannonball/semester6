@@ -1,0 +1,96 @@
+{
+    "timestamp": "2025-05-30T10:25:23.904375",
+    "scraping_info": {
+        "scraper_version": "1.0",
+        "total_records": 1,
+        "data_source": "API Integration Demo"
+    },
+    "data": {
+        "posts": [
+            {
+                "userId": 1,
+                "id": 1,
+                "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+                "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+            },
+            {
+                "userId": 1,
+                "id": 2,
+                "title": "qui est esse",
+                "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+            },
+            {
+                "userId": 1,
+                "id": 3,
+                "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+                "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+            },
+            {
+                "userId": 1,
+                "id": 4,
+                "title": "eum et est occaecati",
+                "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+            },
+            {
+                "userId": 1,
+                "id": 5,
+                "title": "nesciunt quas odio",
+                "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
+            }
+        ],
+        "cat_facts": [
+            {
+                "fact": "Unlike dogs, cats do not have a sweet tooth. Scientists believe this is due to a mutation in a key taste receptor.",
+                "length": 114
+            },
+            {
+                "fact": "When a cat chases its prey, it keeps its head level. Dogs and humans bob their heads up and down.",
+                "length": 97
+            },
+            {
+                "fact": "The technical term for a cat’s hairball is a “bezoar.”",
+                "length": 54
+            }
+        ],
+        "weather": {
+            "coord": {
+                "lon": -0.1257,
+                "lat": 51.5085
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01d"
+                }
+            ],
+            "main": {
+                "temp": 22.5,
+                "feels_like": 23.1,
+                "temp_min": 20.0,
+                "temp_max": 25.0,
+                "pressure": 1013,
+                "humidity": 65
+            },
+            "wind": {
+                "speed": 3.5,
+                "deg": 180
+            },
+            "clouds": {
+                "all": 0
+            },
+            "dt": 1748589923,
+            "sys": {
+                "country": "GB",
+                "sunrise": 1640757600,
+                "sunset": 1640789200
+            },
+            "timezone": 0,
+            "id": 2643743,
+            "name": "London",
+            "cod": 200,
+            "note": "This is sample data for demonstration purposes"
+        }
+    }
+}
