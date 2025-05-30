@@ -15,17 +15,26 @@
 - [Flask Lab](flask_lab/)
 
 ### Mobile Development
-
-- [Expo Framework Testing](expo_labs/README.md)
+- [Lab 1: Expo Mobile App Setup](expo_labs/lab1/)
+- [Lab 2: Expo Sensor Integration](expo_labs/lab2/)
+- [Lab 3: Expo Data Visualization](expo_labs/lab3/)
 
 ### Final Coursework
 
-- [API Integration & Data Visualization Assignment](mqtt_labs/coursework/README.md)
+- [API Integration & Data Visualization Assignment](coursework/)
 
 ## Project Structure
 
 ```
 smart_devices/
+├── coursework/               # Final coursework
+│   ├── README.md
+│   ├── flask_visualizer.py
+│   ├── mqtt_publisher.py
+│   ├── web_scraper.py
+│   ├── requirements.txt
+│   ├── data/
+│   └── templates/
 ├── mqtt_labs/
 │   ├── reports/               # All lab reports
 │   │   ├── lab1_report.md     # JSON Usage
@@ -43,8 +52,12 @@ smart_devices/
 │   │           ├── flask_mqtt_pavyzdys.py
 │   │           └── templates/
 │   │               └── index.html
-│   └── .gitignore            # Excludes working directories
+│   └── .gitignore            # Excludes working directories from mqtt_labs
 ├── expo_labs/                # Mobile development
+│   ├── lab1/
+│   ├── lab2/
+│   ├── lab3/
+│   └── .gitignore            # Excludes Expo app build/dev directories
 └── flask_lab/                # Web development
 ```
 
