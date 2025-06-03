@@ -113,12 +113,12 @@ def create_pdf_from_pngs(image_folder, output_pdf_filename):
 
 
 if __name__ == "__main__":
-    base_communications_dir = "/var/home/mark/Documents/semester6/Communications"
+    base_communications_dir = "/var/home/mark/Documents/semester6/communications"
     lab_folders_to_process = ["lab3", "lab4", "lab5", "lab6"]
 
     for lab_folder_name in lab_folders_to_process:
         input_lab_folder = os.path.join(base_communications_dir, lab_folder_name)
-        output_lab_pdf = os.path.join(base_communications_dir, f"{lab_folder_name}.pdf")
+        output_lab_pdf = os.path.join(base_communications_dir, f"{lab_folder_name}_real.pdf")
         
         print(f"Starting PDF generation for {lab_folder_name}...")
         create_pdf_from_pngs(input_lab_folder, output_lab_pdf)
