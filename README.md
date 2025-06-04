@@ -7,7 +7,7 @@ This repository contains projects and lab work completed during Semester 6.
 - [Smart Devices](#smart-devices)
 - [AI Labs](#ai-labs)
 - [Microcontroller Projects](#microcontroller-projects)
-- [Linux Tasks](#linux-tasks)
+- [Communication](#communication)
 
 ## Smart Devices
 
@@ -89,10 +89,18 @@ This section includes hardware projects and laboratory work developed using micr
 -   **Lab 11: WS2812B Digital LED**
     -   Addressable RGB LEDs: [./microcontrollers/labs/lab11.md](./microcontrollers/labs/lab11.md)
 
-## Linux Tasks
+## Communication
 
-This section includes Linux-related projects and configurations.
+This section includes networking and communication systems laboratory work.
 
--   **Network Configuration Tool**
-    -   Documentation: [./linux_tasks/Readme.md](./linux_tasks/Readme.md)
-    -   Parses configuration files to set up network interfaces and routing tables
+-   **Main Communication Labs Overview:** [./communications/README.md](./communications/README.md)
+    -   Lab Work #3: Cisco router and basic LAN configuration
+    -   Lab Work #4: Cisco switch configuration and MAC-IP addressing  
+    -   Lab Work #5: VLAN networking
+    -   Lab Work #6: Internet and NAT operation
+    -   Lab Work #7: Radio link modelling in ArcGIS
+    -   Lab Work #8: Modelling 4G Mobile Coverage with ArcGIS
+    -   Export folder contains DOCX and PDF files
+    -   labX folders contain screenshots from real hardware
+    -   labX_sim folders contain screenshots from Cisco Packet Tracer (not needed in reports)
+    -   main.py creates PDF files from screenshot folders
